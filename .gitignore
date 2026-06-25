@@ -1,1 +1,4 @@
-﻿images/
+﻿.nojekyll
+.DS_Store
+Thumbs.db
+*.log
