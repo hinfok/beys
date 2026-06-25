@@ -1,0 +1,252 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Beypedia · Beyblade X Parts</title>
+<link rel="icon" href="favicon.svg">
+<style>
+:root{--bg:#1a1c20;--surface:#232529;--surf2:#2d2f34;--text:#f7fafc;--mut:#7f8390;--bdr:#33363d;--r:10px;--font:system-ui,sans-serif;--atk:#e53e3e;--def:#3182ce;--stm:#38a169;--bal:#d69e2e}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);background:var(--bg);color:var(--text)}
+.hd{display:flex;align-items:center;gap:10px;padding:10px 16px;background:var(--surface);border-bottom:1px solid var(--bdr);position:sticky;top:0;z-index:100}
+.hd .br{font-size:17px;font-weight:800}
+.hd .ba{font-size:9px;padding:2px 7px;border-radius:8px;background:linear-gradient(135deg,var(--atk),var(--def));color:#fff}
+.tab{display:flex;gap:4px;padding:10px 16px;flex-wrap:wrap;background:var(--surface);border-bottom:1px solid var(--bdr);position:sticky;top:44px;z-index:99}
+.tab button{padding:5px 12px;border-radius:6px;border:1px solid var(--bdr);background:transparent;color:var(--text);font-size:11px;font-weight:600;cursor:pointer;font-family:var(--font)}
+.tab button.ac{background:var(--atk);color:#fff;border-color:var(--atk)}
+.sr{display:flex;gap:6px;padding:0 16px 10px;margin-top:8px}
+.sr input{flex:1;padding:8px 12px;border-radius:6px;border:1px solid var(--bdr);background:var(--surface);color:var(--text);font-size:13px;font-family:var(--font);outline:none}
+.gr{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:6px;padding:0 10px 10px}
+.bc{background:var(--surface);border:1px solid var(--bdr);border-radius:var(--r);overflow:hidden;cursor:pointer}
+.bc:hover{border-color:var(--mut)}
+.bci{height:130px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#2d2f34,#1a1c20)}
+.bci img{width:100%;height:100%;object-fit:contain}
+.bci .ct{position:absolute;bottom:3px;right:3px;font-size:8px;padding:2px 7px;border-radius:4px;color:#fff;font-weight:700}
+.bci .rt{position:absolute;top:3px;left:3px;font-size:8px;padding:2px 6px;border-radius:4px;background:rgba(0,0,0,.6);color:var(--text)}
+.bcb{padding:6px 8px}
+.bcb .nm{font-size:11px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bcb .nm i{font-weight:400;color:var(--mut);font-size:9px}
+.bcb .sb{font-size:8px;margin-top:3px}
+.bcb .sb .r{display:flex;gap:2px;align-items:center;height:8px}
+.bcb .sb .r .l{width:30px;font-weight:600;color:var(--mut)}
+.bcb .sb .r .b{flex:1;height:4px;border-radius:2px;background:var(--bdr)}
+.bcb .sb .r .b .f{height:100%;border-radius:2px}
+.bcb .sb .r .v{width:16px;color:var(--mut)}
+.cnt{padding:0 16px 8px;font-size:11px;color:var(--mut)}
+.ft{padding:16px;font-size:10px;color:var(--mut);text-align:center;border-top:1px solid var(--bdr);margin-top:16px}
+
+/* Modal */
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.85);z-index:999;overflow-y:auto;padding:20px}
+.modal.vis{display:flex;align-items:center;justify-content:center}
+.mc{background:var(--surface);border:1px solid var(--bdr);border-radius:var(--r);max-width:600px;width:100%;padding:20px;position:relative;max-height:90vh;overflow-y:auto}
+.mc .cl{position:absolute;top:10px;right:14px;font-size:24px;cursor:pointer;color:var(--mut)}
+.mc .cl:hover{color:var(--text)}
+.mc .imn{text-align:center;margin-bottom:12px}
+.mc .imn img{max-width:100%;max-height:250px;border-radius:var(--r)}
+.mc h2{font-size:18px;font-weight:800;margin-bottom:2px}
+.mc .sub{font-size:13px;color:var(--mut);margin-bottom:10px}
+.mc .tgs{display:flex;gap:4px;margin-bottom:8px;flex-wrap:wrap}
+.mc .tgs span{padding:2px 10px;border-radius:6px;font-size:11px;font-weight:700;color:#fff}
+.mc .st2{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.mc .st2 .r{display:flex;gap:4px;align-items:center;flex:1;min-width:120px}
+.mc .st2 .r .l{width:60px;font-size:11px;font-weight:600;color:var(--mut);text-align:right}
+.mc .st2 .r .b{flex:1;height:8px;border-radius:4px;background:var(--bdr)}
+.mc .st2 .r .b .f{height:100%;border-radius:4px}
+.mc .st2 .r .v{width:24px;font-size:11px;color:var(--mut)}
+.mc .wt{font-size:12px;color:var(--mut);margin-bottom:8px}
+.mc .rp{display:flex;gap:6px;margin:10px 0;flex-wrap:wrap}
+.mc .rp .pi{width:70px;height:70px;border-radius:6px;overflow:hidden;border:1px solid var(--bdr);cursor:pointer;background:linear-gradient(135deg,#2d2f34,#1a1c20)}
+.mc .rp .pi img{width:100%;height:100%;object-fit:contain}
+.mc .rp .pi .pi2{display:flex;align-items:center;justify-content:center;height:100%;font-size:8px;color:var(--mut);padding:2px;text-align:center}
+.mc .buy{display:flex;gap:6px;margin-top:10px}
+.mc .buy a{flex:1;text-align:center;padding:8px;border-radius:6px;font-size:12px;font-weight:700;text-decoration:none}
+.mc .buy .az{background:#ff9900;color:#000}
+.mc .buy .eb{background:#0866FF;color:#fff}
+.mc .btl{display:inline-block;margin-top:8px;padding:6px 14px;border-radius:6px;border:1px solid var(--bdr);color:var(--text);font-size:11px;font-weight:600;text-decoration:none}
+@media(max-width:640px){.gr{grid-template-columns:repeat(auto-fill,minmax(130px,1fr))}}
+.sr-w{position:sticky;top:88px;z-index:98;background:var(--bg);padding:8px 16px 4px;margin:0 -16px}.flt-b{display:flex;gap:4px;flex-wrap:wrap;margin:4px 0}.flt-b .fb{padding:2px 8px;border-radius:4px;border:1px solid var(--bdr);background:var(--surface);color:var(--text);cursor:pointer;font-size:9px;font-family:var(--font)}.flt-b .fb.ac{background:var(--atk);color:#fff;border-color:var(--atk)}.flt-b select{padding:2px 6px;border-radius:4px;border:1px solid var(--bdr);background:var(--surface);color:var(--text);font-size:9px;font-family:var(--font);cursor:pointer}.gr.tbl{display:table;width:100%}.gr.tbl .bc{display:table-row}.gr.tbl .bci{display:none}.gr.tbl .bcb{display:table-cell;padding:4px 6px;border-bottom:1px solid var(--bdr);font-size:10px}.gr.tbl .sb{display:none}</style></head>
+<body>
+<header class="hd"><span class="br">🌀 Beypedia<span class="ba">Beta</span></span><a href="start.html" style="font-size:10px;color:var(--mut);text-decoration:none;margin-left:6px">入坑指南</a></header>
+<div class="tab" id="tab"></div>
+<div class="sr-w"><div class="sr"><input type="text" id="q" autocomplete="off" placeholder="搜尋零件..."></div>
+<div class="cnt" id="cnt"></div>
+<div class="gr" id="g"></div>
+<div class="modal" id="modal"><div class="mc" id="mc"></div></div>
+<footer class="ft">© 2026 Beypedia · 非官方粉絲網站 · 圖片引用來源，版權屬原創者所有</footer>
+<script>
+var DATA, curCat='Blade', ALL={};
+
+async function init(){
+  try{
+    var r=await fetch('data/parts.json');
+    DATA=await r.json();
+    buildTabs();
+    loadCat('Series');
+  }catch(e){document.getElementById('g').innerHTML='<p style="padding:40px;text-align:center;color:var(--mut)">Error: '+e.message+'</p>';}
+}
+
+function buildTabs(){
+  var h='',first=true;
+  Object.keys(DATA.categories).forEach(function(k){
+    if(DATA.categories[k].length===0) return;
+    h+='<button class="'+(first?'ac':'')+'" onclick="switchCat(\''+k+'\',this)">'+k+' <span style="font-size:9px;opacity:.7">('+DATA.categories[k].length+')</span></button>';
+    first=false;
+  });
+  document.getElementById('tab').innerHTML=h;
+}
+
+function switchCat(c,el){
+  curCat=c;
+  document.querySelectorAll('.tab button').forEach(function(b){b.classList.remove('ac')});
+  el.classList.add('ac');
+  loadCat(c);
+}
+
+function loadCat(c){
+  ALL=DATA.categories[c]||[];
+  render();
+}
+
+function render(){
+  var q=document.getElementById('q').value.trim().toLowerCase();
+  var items=ALL;
+  if(q) items=items.filter(function(d){return (d.name||'').toLowerCase().includes(q)||(d.id||'').toLowerCase().includes(q)||(d.type||'').toLowerCase().includes(q)||(d.baseSet||'').toLowerCase().includes(q);});
+  
+  var el=document.getElementById('g');
+  document.getElementById('cnt').textContent=items.length+' 個零件';
+  if(!items.length){el.innerHTML='<p style="padding:40px;text-align:center;color:var(--mut)">搵唔到</p>';return;}
+  
+  var h='';
+  items.forEach(function(d){
+    var tc='var(--'+(d.type==='Attack'?'atk':d.type==='Defense'?'def':d.type==='Stamina'?'stm':'bal')+')';
+    var img=d.image?'<img src="'+d.image+'" alt="" loading="lazy">':'<span style="font-size:20px;opacity:.2;font-weight:900">'+(d.name||'??').substring(0,2)+'</span>';
+    var st='';
+    ['attack','defense','stamina','dash','burst'].forEach(function(k){
+      var v=d.stats[k]||0;
+      st+='<div class="r"><span class="l">'+k.substring(0,3)+'</span><div class="b"><div class="f" style="width:'+v+'%;background:var(--'+(k==='attack'?'atk':k==='defense'?'def':k==='stamina'?'stm':k==='dash'?'bal':'atk')+')"></div></div><span class="v">'+v+'</span></div>';
+    });
+    h+='<div class="bc" onclick="showModal(\''+d.id+'\')"><div class="bci" style="background:'+tc+'">'+img+'<span class="rt">'+(d.rotation==='Left'?'L':'R')+'</span><span class="ct" style="background:'+tc+'">'+d.type+'</span></div><div class="bcb"><div class="nm">'+d.name+' <i style="font-size:9px;color:var(--mut);display:block">'+d.baseSet+(d.variant?' &middot; '+d.variant:'')+'</i></div><div class="sb">'+st+'</div></div></div>';
+  });
+  el.innerHTML=h;
+}
+
+function showModal(id){
+  // Find part in current category
+  var d=ALL.find(function(p){return p.id===id;});
+  if(!d) return;
+  
+  var m=document.getElementById('mc');
+  var tc='var(--'+(d.type==='Attack'?'atk':d.type==='Defense'?'def':d.type==='Stamina'?'stm':'bal')+')';
+  var img=d.image?'<img src="'+d.image+'" alt="" style="max-width:100%;max-height:250px">':'<div style="padding:40px;color:var(--mut)">No image</div>';
+  
+  var st='';
+  ['attack','defense','stamina','dash','burst'].forEach(function(k){
+    var v=d.stats[k]||0;
+    st+='<div class="r"><span class="l">'+k.substring(0,3)+'</span><div class="b"><div class="f" style="width:'+v+'%;background:var(--'+(k==='attack'?'atk':k==='defense'?'def':k==='stamina'?'stm':k==='dash'?'bal':'atk')+')"></div></div><span class="v">'+v+'</span></div>';
+  });
+  
+  // 相關零件（同系列）
+  var rp='';
+  var links=DATA.seriesMap[id]||[];
+  if(links.length){
+    rp='<div style="margin:10px 0;font-size:12px;color:var(--mut);font-weight:600">Related parts from series:</div><div class="rp">';
+    links.forEach(function(l){
+      var bs=l.bs||'';
+      if(l.l && DATA.categories.Blade){ // this is the blade
+        var p=DATA.categories.Blade.find(function(x){return x.id===l.l;});
+        if(p) rp+=partThumb(p,'Blade');
+      }
+      if(l.r && DATA.categories.Ratchet){
+        var p=DATA.categories.Ratchet.find(function(x){return x.id===l.r;});
+        if(p) rp+=partThumb(p,'Ratchet');
+      }
+      if(l.b && DATA.categories.Bit){
+        var p=DATA.categories.Bit.find(function(x){return x.id===l.b;});
+        if(p) rp+=partThumb(p,'Bit');
+      }
+    });
+    rp+='</div>';
+  }
+  
+  // Product image
+  var pi='';
+  if(links.length && links[0].bs){
+    var bs=links[0].bs;
+    var prodData=DATA.productImages[bs];
+    if(prodData) pi='<div style="text-align:center;margin:10px 0"><img src="'+prodData+'" alt="" style="max-width:100%;max-height:150px;border-radius:6px"></div>';
+  }
+  
+  var amz='https://www.amazon.com/s?k=Beyblade+X+'+encodeURIComponent(d.name)+'&tag=hinfok-20';
+  var eb='https://www.ebay.com/sch/i.html?_nkw=Beyblade+X+'+encodeURIComponent(d.name)+'&campid=5339157670&mkcid=1&mkevt=1';
+  
+  m.innerHTML='<span class="cl" onclick="closeModal()">&times;</span><div class="imn">'+img+'</div><h2>'+d.name+'</h2><div style="font-size:12px;color:var(--mut);margin-bottom:6px">'+d.baseSet+(d.variant?' &middot; '+d.variant:'')+'</div><div class="tgs"><span style="background:'+tc+'">'+d.type+'</span><span style="background:'+(d.rotation==='Left'?'var(--stm)':'var(--atk)')+'">'+(d.rotation==='Left'?'Left':'Right')+'</span>'+(d.weight?'<span style="background:var(--bal)">'+d.weight+'g</span>':'')+'</div><div class="st2">'+st+'</div>'+pi+rp+'<div class="buy"><a class="az" href="'+amz+'" target="_blank">Amazon 購買</a><a class="eb" href="'+eb+'" target="_blank">eBay 購買</a></div><div style="text-align:center;margin-top:8px"><a class="btl" href="part.html?id='+d.id+'&cat='+curCat+'">詳細資料 &rarr;</a></div>';
+  
+  try{if(DATA.products&&d.baseSet&&DATA.products[d.baseSet]){
+    var _p=DATA.products[d.baseSet];var _d=document.createElement('div');
+    _d.style.cssText='margin:8px 0;padding:8px;border:1px solid var(--bdr);border-radius:6px;font-size:11px;color:var(--mut)';
+    if(_p.url)_d.innerHTML='<a href='+_p.url+' target=_blank style=color:var(--atk);text-decoration:none>Link -&gt;</a>';
+    var _b=m.querySelector('.buy');if(_b)m.insertBefore(_d,_b);
+  }}catch(ex){}
+  document.getElementById('modal').classList.add('vis');
+}
+
+function partThumb(p,cat){
+  var img=p.image?'<img src="'+p.image+'" alt="">':'<div class="pi2">'+cat.substring(0,3)+'</div>';
+  var tc='var(--'+(p.type==='Attack'?'atk':p.type==='Defense'?'def':p.type==='Stamina'?'stm':'bal')+')';
+  var name=p.name.substring(0,10)+(p.name.length>10?'...':'');
+  return '<div class="pi" onclick="showModal(\''+p.id+'\')" title="'+p.name+'">'+img+'<div style="font-size:7px;text-align:center;padding:1px;background:'+tc+'">'+name+'</div></div>';
+}
+
+function closeModal(){document.getElementById('modal').classList.remove('vis');}
+document.getElementById('q').addEventListener('input',render);
+
+var cv="",cr="",cs="";
+function buildSubFilters(){
+  var vers={};(DATA.categories[curCat]||[]).forEach(function(b){var v=(b.baseSet||"").replace(/\d.*$/,"");if(v)vers[v]=1;});
+  var h="<span style=\"color:var(--mut);font-size:9px\">\u7248\u672c</span><button class=\"fb ac\" data-v=\"\" onclick=\"setV(this,'')\">\u5168\u90e8</button>";
+  Object.keys(vers).sort().forEach(function(v){h+="<button class=\"fb\" data-v=\"\"+v+"\" onclick=\"setV(this,'\"+v+"\")\">"+v+"</button>";});
+  h+="<span style=\"color:var(--mut);font-size:9px;margin-left:8px\">\u65cb\u8f49</span>";
+  h+="<button class=\"fb ac\" data-r=\"\" onclick=\"setR(this,'')\">\u5168\u90e8</button>";
+  h+="<button class=\"fb\" data-r=\"Right\" onclick=\"setR(this,'Right')\">\u53f3</button>";
+  h+="<button class=\"fb\" data-r=\"Left\" onclick=\"setR(this,'Left')\">\u5de6</button>";
+  h+="<span style=\"color:var(--mut);font-size:9px;margin-left:8px\">\u6392\u5e8f</span><select onchange=\"setS(this.value)\" style=\"font-size:9px\">";
+  h+="<option value=\"\">\u9810\u8a2d</option><option value=\"attack\">\u653b\u64ca</option><option value=\"defense\">\u9632\u79a6</option>";
+  h+="<option value=\"stamina\">\u6301\u4e45</option><option value=\"dash\">\u52a0\u901f</option><option value=\"burst\">\u8010\u4e45</option><option value=\"weight\">\u91cd\u91cf</option></select>";
+  h+="<span class=\"fb\" onclick=\"_tv=!_tv;document.getElementById('g').classList.toggle('tbl',_tv);render()\" style=\"margin-left:auto;cursor:pointer\">\ud83d\udccb \u8868</span>";
+  document.getElementById("fltB").innerHTML=h;
+}
+function setV(el,v){cv=v;document.querySelectorAll("#fltB .fb[data-v]").forEach(function(b){b.classList.remove("ac")});if(v)el.classList.add("ac");render();}
+function setR(el,v){cr=v;document.querySelectorAll("#fltB .fb[data-r]").forEach(function(b){b.classList.remove("ac")});if(v)el.classList.add("ac");render();}
+function setS(v){cs=v;render();}
+init();
+
+var cv='',cr='',cs='';
+function buildSubFilters(){
+  var vers={};(DATA.categories[curCat]||[]).forEach(function(b){var v=(b.baseSet||'').replace(/\\d.*$/,'');if(v)vers[v]=1;});
+  var h='<span style="color:var(--mut);font-size:9px">版本</span><button class="fb ac" data-v="" onclick="setV(this,\'\')">全部</button>';
+  Object.keys(vers).sort().forEach(function(v){h+='<button class="fb" data-v="'+v+'" onclick="setV(this,\''+v+'\')">'+v+'</button>';});
+  h+='<span style="color:var(--mut);font-size:9px;margin-left:8px">旋轉</span><button class="fb ac" data-r="" onclick="setR(this,\'\')">全部</button><button class="fb" data-r="Right" onclick="setR(this,\'Right\')">右</button><button class="fb" data-r="Left" onclick="setR(this,\'Left\')">左</button>';
+  document.getElementById('fltB').innerHTML=h;
+}
+function setV(el,v){cv=v;document.querySelectorAll('#fltB .fb[data-v]').forEach(function(b){b.classList.remove('ac')});if(v)el.classList.add('ac');render();}
+function setR(el,v){cr=v;document.querySelectorAll('#fltB .fb[data-r]').forEach(function(b){b.classList.remove('ac')});if(v)el.classList.add('ac');render();}
+function setS(v){cs=v;render();}
+
+init();
+</script><div class="modal" id="lightbox" style="cursor:pointer" onclick="this.classList.remove('vis')"><div style="display:flex;align-items:center;justify-content:center;height:100%"><img id="lbImg" style="max-width:90%;max-height:90%;border-radius:8px"></div></div>
+<script>function openLightbox(s){document.getElementById('lbImg').src=s;document.getElementById('lightbox').classList.add('vis');}
+var cv='',cr='',cs='';
+function buildSubFilters(){
+  var vers={};(DATA.categories[curCat]||[]).forEach(function(b){var v=(b.baseSet||'').replace(/\\d.*$/,'');if(v)vers[v]=1;});
+  var h='<span style="color:var(--mut);font-size:9px">版本</span><button class="fb ac" data-v="" onclick="setV(this,\'\')">全部</button>';
+  Object.keys(vers).sort().forEach(function(v){h+='<button class="fb" data-v="'+v+'" onclick="setV(this,\''+v+'\')">'+v+'</button>';});
+  h+='<span style="color:var(--mut);font-size:9px;margin-left:8px">旋轉</span><button class="fb ac" data-r="" onclick="setR(this,\'\')">全部</button><button class="fb" data-r="Right" onclick="setR(this,\'Right\')">右</button><button class="fb" data-r="Left" onclick="setR(this,\'Left\')">左</button>';
+  document.getElementById('fltB').innerHTML=h;
+}
+function setV(el,v){cv=v;document.querySelectorAll('#fltB .fb[data-v]').forEach(function(b){b.classList.remove('ac')});if(v)el.classList.add('ac');render();}
+function setR(el,v){cr=v;document.querySelectorAll('#fltB .fb[data-r]').forEach(function(b){b.classList.remove('ac')});if(v)el.classList.add('ac');render();}
+function setS(v){cs=v;render();}
+
+init();
+</script>
+</body></html>
