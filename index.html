@@ -376,7 +376,7 @@ function buildSubFilters(){
   });
   var h='<span style="color:var(--mut);font-size:9px">版本</span><button class="fb'+(cv===''?' ac':'')+'" onclick="setV(this,\'\')">全部</button>';
   Object.keys(vers).sort().forEach(function(v){
-    h+='<button class="fb'+(cv===v?' ac':'')+'" onclick="setV(this,\'"+v+"\')">'+v+'</button>';
+    h+='<button class="fb'+(cv===v?' ac':'')+'" onclick="setV(this,\''+v+'\')">'+v+'</button>';
   });
   var hasRot=(DATA.categories[curCat]||[]).some(function(d){return d.rotation;});
   if(hasRot){
