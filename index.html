@@ -26,7 +26,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
+<link rel="canonical" href="https://beys.hinfok.com/">
 <link rel="icon" href="favicon.svg">
+<link rel="canonical" href="https://beys.hinfok.com/">
 <link rel="icon" type="image/png" href="favicon.png">
 <style>
 :root{--bg:#1a1c20;--surface:#232529;--surf2:#2d2f34;--text:#f7fafc;--mut:#a0aec0;--bdr:#33363d;--r:10px;--font:system-ui,sans-serif;--atk:#e53e3e;--def:#60a5fa;--stm:#38a169;--bal:#d69e2e}
@@ -89,7 +91,25 @@ body{font-family:var(--font);background:var(--bg);color:var(--text)}
 .mc .btl{display:inline-block;margin-top:8px;padding:6px 14px;border-radius:6px;border:1px solid var(--bdr);color:var(--text);font-size:11px;font-weight:600;text-decoration:none}
 @media(max-width:640px){.gr{grid-template-columns:repeat(auto-fill,minmax(130px,1fr))}}
 .sr-w{position:sticky;top:88px;z-index:98;background:var(--bg);padding:8px 16px 4px;margin:0 -16px}.flt-b{display:flex;gap:4px;flex-wrap:wrap;margin:4px 0}.flt-b .fb{padding:2px 8px;border-radius:4px;border:1px solid var(--bdr);background:var(--surface);color:var(--text);cursor:pointer;font-size:9px;font-family:var(--font)}.flt-b .fb.ac{background:var(--atk);color:#fff;border-color:var(--atk)}.flt-b select{padding:2px 6px;border-radius:4px;border:1px solid var(--bdr);background:var(--surface);color:var(--text);font-size:9px;font-family:var(--font);cursor:pointer}.gr.tbl{display:table;width:100%}.gr.tbl .bc{display:table-row}.gr.tbl .bci{display:none}.gr.tbl .bcb{display:table-cell;padding:4px 6px;border-bottom:1px solid var(--bdr);font-size:10px}.gr.tbl .sb{display:none}.dr{position:relative;display:inline-block}.dr:hover .dc,.dr.hover .dc{display:block!important}.dc{display:none;position:absolute;top:100%;left:0;background:var(--surface);border:1px solid var(--bdr);border-radius:6px;min-width:200px;z-index:1000;padding:4px;box-shadow:0 4px 16px rgba(0,0,0,.4)}.dc a{display:block;padding:6px 12px;font-size:10px;color:var(--text);text-decoration:none;white-space:nowrap}.dc a:hover{background:var(--surf2);color:var(--atk)}
-</style></head>
+</style><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "BEYBLADE X 爆旋陀螺零件圖鑑",
+  "alternateName": "Beypedia",
+  "url": "https://beys.hinfok.com/",
+  "inLanguage": "zh-TW",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://beys.hinfok.com/?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+</head>
 <body>
 <header style="padding:0;background:var(--surface);border-bottom:1px solid var(--bdr)"><div style="display:flex;align-items:center;padding:8px 14px 6px"><div><a href="/" style="text-decoration:none;color:inherit"><span style="font-size:16px;font-weight:800">🌀 Beypedia<span style="font-size:8px;padding:1px 6px;border-radius:6px;background:linear-gradient(135deg,var(--atk),var(--def));color:#fff;margin-left:4px">Beta</span></span></a><a href="/" style="text-decoration:none"><div style="font-size:13px;font-weight:700;margin-top:2px;background:linear-gradient(90deg,#e53e3e,#d69e2e,#38a169);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">BEYBLADE X 爆旋陀螺零件圖鑑</div></a></div><span style="flex:1"></span><div style="display:flex;align-items:center;gap:2px"><div class="dr"><a href="guide/" style="font-size:10px;color:var(--stm);text-decoration:none;white-space:nowrap;padding:4px 7px;border-radius:4px">📖攻略 ▾</a><div class="dc"><a href="guide/attack-combos.html">⚡ 最強攻擊組合推薦</a><a href="guide/beginners.html">🎯 新手必買 5 款 Starter</a><a href="guide/bx-vs-ux.html">🔁 BX vs UX 系列比較</a><a href="guide/defense-combos.html">🛡️ 防守與持久組合推薦</a><a href="guide/tournaments.html">🏟️ 香港台灣比賽場地</a><a href="https://www.zalora.com.hk/blog/fashion/2026-beyblade-x-asia-rules-12th-edition/" target="_blank" rel="nofollow">🏆 亞洲賽規則</a></div></div><a href="combo.html" style="font-size:10px;color:var(--atk);text-decoration:none;white-space:nowrap;padding:4px 7px;border-radius:4px">⚡Combo</a><a href="compare.html" style="font-size:10px;color:var(--text);text-decoration:none;white-space:nowrap;padding:4px 7px;border-radius:4px;border:1px solid var(--def)">📊對比</a><a href="start.html" style="font-size:10px;color:var(--mut);text-decoration:none;white-space:nowrap;padding:4px 7px;border-radius:4px">入坑指南</a></div></div></header>
 <div class="tab" id="tab"></div>
@@ -184,7 +204,7 @@ function render(){
   var h='';
   items.forEach(function(d){
     var tc='var(--'+(d.type==='Attack'?'atk':d.type==='Defense'?'def':d.type==='Stamina'?'stm':'bal')+')';
-    var img=d.image?'<img src="'+d.image+'" alt="" loading="lazy">':'<span style="font-size:20px;opacity:.2;font-weight:900">'+(d.name||'??').substring(0,2)+'</span>';
+    var img=d.image?'<img src="'+d.image+'" alt="'+d.name+'" loading="lazy">':'<span style="font-size:20px;opacity:.2;font-weight:900">'+(d.name||'??').substring(0,2)+'</span>';
     var st='';
     ['attack','defense','stamina','dash','burst'].forEach(function(k){
       var v=d.stats[k]||0;
@@ -202,7 +222,7 @@ function showModal(id){
   
   var m=document.getElementById('mc');
   var tc='var(--'+(d.type==='Attack'?'atk':d.type==='Defense'?'def':d.type==='Stamina'?'stm':'bal')+')';
-  var img=d.image?'<img src="'+d.image+'" alt="" style="max-width:100%;max-height:250px">':'<div style="padding:40px;color:var(--mut)">No image</div>';
+  var img=d.image?'<img src="'+d.image+'" alt="'+d.name+'" style="max-width:100%;max-height:250px">':'<div style="padding:40px;color:var(--mut)">No image</div>';
   
   var st='';
   ['attack','defense','stamina','dash','burst'].forEach(function(k){
@@ -238,7 +258,7 @@ function showModal(id){
   if(links.length && links[0].bs){
     var bs=links[0].bs;
     var prodData=DATA.productImages[bs];
-    if(prodData) pi='<div style="text-align:center;margin:10px 0"><img src="'+prodData+'" alt="" style="max-width:100%;max-height:150px;border-radius:6px"></div>';
+    if(prodData) pi='<div style="text-align:center;margin:10px 0"><img src="'+prodData+'" alt="'+d.baseSet+'" style="max-width:100%;max-height:150px;border-radius:6px"></div>';
   }
   
   var amz='https://www.amazon.com/s?k=Beyblade+X+'+encodeURIComponent(d.name)+'&tag=hinfok-20';
@@ -256,7 +276,7 @@ function showModal(id){
 }
 
 function partThumb(p,cat){
-  var img=p.image?'<img src="'+p.image+'" alt="">':'<div class="pi2">'+cat.substring(0,3)+'</div>';
+  var img=p.image?'<img src="'+p.image+'" alt="'+p.name+'">':'<div class="pi2">'+cat.substring(0,3)+'</div>';
   var tc='var(--'+(p.type==='Attack'?'atk':p.type==='Defense'?'def':p.type==='Stamina'?'stm':'bal')+')';
   var name=p.name.substring(0,10)+(p.name.length>10?'...':'');
   return '<div class="pi" onclick="showModal(\''+p.id+'\')" title="'+p.name+'">'+img+'<div style="font-size:7px;text-align:center;padding:1px;background:'+tc+'">'+name+'</div></a>';
