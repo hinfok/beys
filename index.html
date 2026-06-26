@@ -371,7 +371,7 @@ function buildSubFilters(){
   var vers={};
   if(!DATA) return;
   (DATA.categories[curCat]||[]).forEach(function(b){
-    var v=(b.baseSet||'').replace(/\d.*$/,'');
+    var v=(b.baseSet||'').replace(/[\d-].*$/,'');
     if(v) vers[v]=1;
   });
   var h='<span style="color:var(--mut);font-size:9px">版本</span><button class="fb'+(cv===''?' ac':'')+'" onclick="setV(this,\'\')">全部</button>';
